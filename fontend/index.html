@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>To-Do List</h2>
+    <div class="theme-toggle">
+      <button onclick="toggleTheme()">Chế độ Tối / Sáng</button>
+    </div>
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Công việc">
+      <input type="datetime-local" id="deadline">
+      <select id="tag">
+        <option value="">Thường</option>
+        <option value="Học tập">Học tập</option>
+        <option value="Công việc">Công việc</option>
+        <option value="Việc nhà">Việc nhà</option>
+      </select>
+      <button onclick="addTask()">Thêm</button>
+    </div>
+    <div class="filter">
+      <select onchange="filterTasks(this.value)">
+        <option value="all">Tất cả</option>
+        <option value="active">Chưa xong</option>
+        <option value="completed">Hoàn thành</option>
+      </select>
+    </div>
+    <div class="sort-toggle">
+  <button onclick="toggleSortByDeadline()">Sắp xếp theo deadline</button>
+</div>
+
+    <ul id="taskList"></ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
